@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Produto</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Cadastro de Produto</h1>
+    <form id="produtoForm">
+      <label for="nome">Nome do Produto:</label>
+      <input type="text" id="nome" required />
+
+      <label for="descricao">Descrição:</label>
+      <input type="text" id="descricao" required />
+
+      <label for="categoria">Categoria:</label>
+      <input type="text" id="categoria" required />
+
+      <button type="submit">Cadastrar Produto</button>
+    </form>
+
+    <p id="mensagem" class="mensagem-sucesso"></p>
+  </div>
+
+  <script>
+    document.getElementById("produtoForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const descricao = document.getElementById("descricao").value.trim();
+      const categoria = document.getElementById("categoria").value.trim();
+
+      if (nome && descricao && categoria) {
+        document.getElementById("mensagem").textContent = 'Produto cadastrado com sucesso';
+        document.getElementById("mensagem").style.color = "green";
+      }
+    });
+
+  </script>
+</body>
+
+</html>
