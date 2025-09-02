@@ -1,14 +1,14 @@
 describe("Tela de login", function() {
     beforeEach(function() {
-        cy.visit("http://127.0.0.1:5501/produto.html")
+        cy.visit("http://127.0.0.1:5500/produto.html")
 })
 
     it("Cadastro do produto", function(){
-        cy.get("#nome").type("nome")
-        cy.get("#descricao").type("descricao")
-        cy.get("#categoria").type("categoria")
+        cy.get("#nome").type("Nome do Produto")
+        cy.get("#descricao").type("Descrição")
+        cy.get("#categoria").type("Categoria")
         cy.get("submit").click()
-        cy.get("mensagem-sucesso").should("Produto cadastrado com sucesso")
+        cy.get("mensagem").should("Produto cadastrado com sucesso")
 })
 
 //     it("Login com falha", function(){
